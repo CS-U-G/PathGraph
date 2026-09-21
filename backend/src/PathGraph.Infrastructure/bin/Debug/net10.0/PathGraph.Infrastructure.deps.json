@@ -1,0 +1,56 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "PathGraph.Infrastructure/1.0.0": {
+        "dependencies": {
+          "PathGraph.Application": "1.0.0",
+          "PathGraph.Domain": "1.0.0"
+        },
+        "runtime": {
+          "PathGraph.Infrastructure.dll": {}
+        }
+      },
+      "PathGraph.Application/1.0.0": {
+        "dependencies": {
+          "PathGraph.Domain": "1.0.0"
+        },
+        "runtime": {
+          "PathGraph.Application.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "PathGraph.Domain/1.0.0": {
+        "runtime": {
+          "PathGraph.Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "PathGraph.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PathGraph.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PathGraph.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
