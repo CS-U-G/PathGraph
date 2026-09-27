@@ -1,0 +1,44 @@
+{
+  "learning_path": [
+    {
+      "skill_id": "http://data.europa.eu/esco/skill/0007833a-6ff5-4089-a292-6284693b4dd6",
+      "label": "Python (programming language)",
+      "priority": 1,
+      "gap": 0.2,
+      "prerequisite_satisfied": true,
+      "relevance": 0.96,
+      "demand": 0.91,
+      "estimated_cost": 25.0,
+      "reason": "Foundational requirement with 0.20 mastery gap; all prerequisite competencies met.",
+      "reason_codes": [
+        "REQUIRED_BY_TARGET",
+        "MASTERY_GAP",
+        "PREREQ_SATISFIED",
+        "HIGH_RELEVANCE"
+      ]
+    },
+    {
+      "skill_id": "http://data.europa.eu/esco/skill/a2c67645-1234-4567-89ab-cdef01234567",
+      "label": "RESTful web services",
+      "priority": 2,
+      "gap": 0.5,
+      "prerequisite_satisfied": true,
+      "relevance": 0.89,
+      "demand": 0.87,
+      "estimated_cost": 18.0,
+      "reason": "Stepping stone architecture pattern required for target software developer role.",
+      "reason_codes": [
+        "REQUIRED_BY_TARGET",
+        "STEPPING_STONE",
+        "PREREQ_SATISFIED"
+      ]
+    }
+  ],
+  "meta": {
+    "target_occupation_id": "http://data.europa.eu/esco/occupation/2512.1",
+    "unresolved_skills": [
+      "quantum cooking"
+    ],
+    "generated_at": "2026-09-27T08:30:00Z"
+  }
+}

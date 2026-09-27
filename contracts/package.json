@@ -1,0 +1,14 @@
+{
+  "name": "@pathgraph/contracts",
+  "version": "1.0.0",
+  "description": "PathGraph cross-cutting API and AI contracts",
+  "private": true,
+  "main": "types/index.ts",
+  "scripts": {
+    "codegen": "openapi-typescript ai.openapi.yaml -o types/ai.contract.ts",
+    "codegen:frontend": "openapi-typescript ai.openapi.yaml -o ../frontend/src/app/core/contracts/ai.contract.ts"
+  },
+  "devDependencies": {
+    "openapi-typescript": "^7.13.0"
+  }
+}

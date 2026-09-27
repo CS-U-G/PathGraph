@@ -1,0 +1,301 @@
+openapi: 3.1.0
+info:
+  title: PathGraph AI Recommendation Service API
+  description: >-
+    Foundational contract for the PathGraph AI Recommendation Service.
+    Computes personalized, skill-gap-driven, and prerequisite-aware learning paths
+    for learners targeting specific canonical ESCO occupations.
+  version: 1.0.0
+  contact:
+    name: PathGraph Engineering
+servers:
+  - url: http://localhost:8000
+    description: Local AI service instance
+  - url: https://api.pathgraph.internal/ai
+    description: Internal cluster endpoint
+
+paths:
+  /v1/recommendations:
+    post:
+      summary: Generate personalized learning path recommendations
+      description: >-
+        Analyzes a learner profile against a target canonical ESCO occupation,
+        resolves free-text skill labels, evaluates prerequisite graph constraints,
+        computes skill gaps, and returns a prioritized, multi-criteria-ranked learning path.
+      operationId: generateRecommendations
+      requestBody:
+        required: true
+        description: Current learner skills and the target occupation goal.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RecommendationRequest'
+      responses:
+        '200':
+          description: Successfully generated an ordered, explained learning path recommendation.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RecommendationResponse'
+        '400':
+          description: Bad request. Target occupation is invalid/unknown or unresolvable in the canonical taxonomy.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '422':
+          description: Unprocessable entity. Schema validation failed on input fields (e.g. proficiency out of range, missing required fields).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal server error. Unexpected inference, graph processing, or system failure.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+components:
+  schemas:
+    ReasonCode:
+      type: string
+      description: Enumerated machine-readable explanation tags describing why a skill is recommended.
+      enum:
+        - REQUIRED_BY_TARGET
+        - MASTERY_GAP
+        - PREREQ_SATISFIED
+        - HIGH_RELEVANCE
+        - HIGH_DEMAND
+        - TRANSVERSAL_FOUNDATION
+        - STEPPING_STONE
+
+    LearnerSkill:
+      type: object
+      description: A skill currently possessed or claimed by the learner, either pre-resolved or raw text.
+      required:
+        - label
+      properties:
+        skill_id:
+          type:
+            - string
+            - "null"
+          description: Canonical ESCO skill URI or identifier if resolved; null if submitting raw label for AI semantic resolution.
+          example: "http://data.europa.eu/esco/skill/0007833a-6ff5-4089-a292-6284693b4dd6"
+        label:
+          type: string
+          minLength: 1
+          description: Human-readable skill label as entered by learner or resolved by client; used as fallback for semantic mapping when skill_id is null.
+          example: "Python (programming language)"
+        proficiency:
+          type:
+            - number
+            - "null"
+          minimum: 0.0
+          maximum: 1.0
+          default: 0.5
+          description: Learner proficiency from 0.0 to 1.0. Optional; if omitted or null, defaults to 0.5 (representing baseline working competence).
+          example: 0.7
+
+    RecommendationTarget:
+      type: object
+      description: The target occupational goal for which the recommendation is generated.
+      required:
+        - occupation_id
+      properties:
+        occupation_id:
+          type: string
+          minLength: 1
+          description: Canonical ESCO occupation URI or identifier targeted by the learner.
+          example: "http://data.europa.eu/esco/occupation/2512.1"
+        target_type:
+          type: string
+          default: occupation
+          enum:
+            - occupation
+            - custom_goal
+          description: Type of target goal. Defaults to occupation. Reserved for future custom goal extensions.
+          example: occupation
+        custom_goal:
+          type:
+            - string
+            - "null"
+          default: null
+          description: Optional free-text description of custom learning goal or specialization; reserved for future semantic matching extensions.
+          example: null
+
+    LearnerProfile:
+      type: object
+      description: Learner profile containing current skills and target career goal.
+      required:
+        - skills
+        - target
+      properties:
+        skills:
+          type: array
+          description: List of learner claimed skills (pre-resolved ESCO skills or raw user-entered labels).
+          items:
+            $ref: '#/components/schemas/LearnerSkill'
+        target:
+          $ref: '#/components/schemas/RecommendationTarget'
+
+    RecommendationRequest:
+      type: object
+      description: Payload submitted to request a personalized learning path recommendation.
+      required:
+        - learner
+      properties:
+        learner:
+          $ref: '#/components/schemas/LearnerProfile'
+
+    PathSkillRecommendation:
+      type: object
+      description: An individual recommended skill milestone within the ordered learning path.
+      required:
+        - skill_id
+        - label
+        - priority
+        - gap
+        - prerequisite_satisfied
+        - relevance
+        - demand
+        - reason
+        - reason_codes
+      properties:
+        skill_id:
+          type: string
+          description: Canonical ESCO skill URI or persistent identifier.
+          example: "http://data.europa.eu/esco/skill/0007833a-6ff5-4089-a292-6284693b4dd6"
+        label:
+          type: string
+          description: Canonical human-readable label of the skill.
+          example: "Python (programming language)"
+        priority:
+          type: integer
+          minimum: 1
+          description: 1-indexed ordering position in the recommended path sequence.
+          example: 1
+        gap:
+          type: number
+          minimum: 0.0
+          maximum: 1.0
+          description: Competency gap between target requirement and current learner proficiency (required level minus learner mastery, bounded in [0.0, 1.0]).
+          example: 0.3
+        prerequisite_satisfied:
+          type: boolean
+          description: True if all prerequisite skills in the curriculum graph are already possessed by learner or scheduled earlier in this path.
+          example: true
+        relevance:
+          type: number
+          minimum: 0.0
+          maximum: 1.0
+          description: Normalized semantic similarity and contextual importance score relative to target occupation and learner background.
+          example: 0.95
+        demand:
+          type: number
+          minimum: 0.0
+          maximum: 1.0
+          description: Normalized labor market demand index and cross-occupational transferability score.
+          example: 0.88
+        estimated_cost:
+          type:
+            - number
+            - "null"
+          minimum: 0.0
+          description: Optional estimated learning effort/cost in normalized hours or complexity units.
+          example: 30.0
+        reason:
+          type: string
+          description: Human-readable pedagogical explanation of why this skill was selected and sequenced at this step.
+          example: "Essential core skill for target occupation with an identified mastery gap of 0.30; all prerequisites are satisfied."
+        reason_codes:
+          type: array
+          description: Array of enumerated machine-readable tags for frontend badge/icon rendering.
+          items:
+            $ref: '#/components/schemas/ReasonCode'
+
+    RecommendationMetadata:
+      type: object
+      description: Contextual metadata about the generated recommendation run.
+      required:
+        - target_occupation_id
+        - unresolved_skills
+        - generated_at
+      properties:
+        target_occupation_id:
+          type: string
+          description: Canonical target occupation identifier that grounded this recommendation calculation.
+          example: "http://data.europa.eu/esco/occupation/2512.1"
+        unresolved_skills:
+          type: array
+          description: Input skill labels that the semantic resolver could not map to canonical ESCO skills, enabling client UI to inform the user.
+          items:
+            type: string
+          example:
+            - "quantum cooking"
+        generated_at:
+          type: string
+          format: date-time
+          description: ISO-8601 UTC timestamp when this recommendation plan was generated.
+          example: "2026-09-27T08:00:00Z"
+
+    RecommendationResponse:
+      type: object
+      description: Complete response containing ordered learning path recommendations and execution metadata.
+      required:
+        - learning_path
+        - meta
+      properties:
+        learning_path:
+          type: array
+          description: Ordered list of skill learning recommendations ranked by prerequisite topological order and multi-criteria scoring.
+          items:
+            $ref: '#/components/schemas/PathSkillRecommendation'
+        meta:
+          $ref: '#/components/schemas/RecommendationMetadata'
+
+    ErrorDetail:
+      type: object
+      description: Specific field-level detail for request validation or semantic resolution errors.
+      required:
+        - issue
+      properties:
+        field:
+          type:
+            - string
+            - "null"
+          description: Name of the invalid field or parameter, if applicable.
+          example: "learner.skills[0].proficiency"
+        issue:
+          type: string
+          description: Specific description of the validation failure or semantic error.
+          example: "Value must be between 0.0 and 1.0."
+
+    ErrorResponse:
+      type: object
+      description: Standardized error response shape for all 4xx/5xx API responses.
+      required:
+        - code
+        - message
+        - timestamp
+      properties:
+        code:
+          type: string
+          description: Machine-readable uppercase snake_case error code.
+          example: "INVALID_TARGET_OCCUPATION"
+        message:
+          type: string
+          description: Human-readable error message explaining the failure.
+          example: "Target occupation does not exist in ESCO taxonomy."
+        details:
+          type:
+            - array
+            - "null"
+          description: Optional list of granular field-level error details.
+          items:
+            $ref: '#/components/schemas/ErrorDetail'
+        timestamp:
+          type: string
+          format: date-time
+          description: ISO-8601 UTC timestamp when the error occurred.
+          example: "2026-09-27T08:00:00Z"

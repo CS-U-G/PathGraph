@@ -1,0 +1,11 @@
+{
+  "code": "VALIDATION_ERROR",
+  "message": "Validation failed for one or more request fields.",
+  "details": [
+    {
+      "field": "learner.skills[0].proficiency",
+      "issue": "Input should be less than or equal to 1.0"
+    }
+  ],
+  "timestamp": "2026-09-27T08:30:00Z"
+}

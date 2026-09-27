@@ -1,0 +1,24 @@
+{
+  "learner": {
+    "skills": [
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/0007833a-6ff5-4089-a292-6284693b4dd6",
+        "label": "Python (programming language)",
+        "proficiency": 0.8
+      },
+      {
+        "skill_id": null,
+        "label": "fastapi web development",
+        "proficiency": 0.4
+      },
+      {
+        "label": "docker containerization"
+      }
+    ],
+    "target": {
+      "occupation_id": "http://data.europa.eu/esco/occupation/2512.1",
+      "target_type": "occupation",
+      "custom_goal": null
+    }
+  }
+}

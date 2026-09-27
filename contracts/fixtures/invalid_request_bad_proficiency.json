@@ -1,0 +1,13 @@
+{
+  "learner": {
+    "skills": [
+      {
+        "label": "Python",
+        "proficiency": 1.5
+      }
+    ],
+    "target": {
+      "occupation_id": "http://data.europa.eu/esco/occupation/2512.1"
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "code": "INVALID_TARGET_OCCUPATION",
+  "message": "Target occupation 'invalid_occ_9999' was not found in the ESCO taxonomy.",
+  "details": null,
+  "timestamp": "2026-09-27T08:30:00Z"
+}
