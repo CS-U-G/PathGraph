@@ -1,7 +1,35 @@
 # PathGraph — Architecture & Team Guide
 
-> **Graduation Project · Hadhramout University · Computer Science**  
+> **Graduation Project · Hadhramout University · Computer Science**
 > A modular, AI-assisted learning-path engine that models skills and prerequisites as a graph, analyses learner gaps, and generates structured learning paths.
+
+### Tech Stack
+
+<p>
+  <img src="https://img.shields.io/badge/ASP.NET_APIs-512BD4?style=for-the-badge&logo=dotnet&logoColor=white" alt="ASP.NET APIs" />
+  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" />
+  <img src="https://img.shields.io/badge/AI_%2F_FastAPI-FF6F00?style=for-the-badge&logo=python&logoColor=white" alt="AI / FastAPI" />
+  <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL" />
+</p>
+
+<p>
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/ASP.NET_APIs-512BD4?style=flat-square&logo=dotnet&logoColor=white" alt="ASP.NET APIs" />
+  <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python" />
+  <img src="https://img.shields.io/badge/NetworkX-11557C?style=flat-square&logo=python&logoColor=white" alt="NetworkX" />
+  <img src="https://img.shields.io/badge/ESCO-Taxonomy-2E7D32?style=flat-square" alt="ESCO Taxonomy" />
+  <img src="https://img.shields.io/badge/OpenAPI-Contracts-6BA539?style=flat-square&logo=openapiinitiative&logoColor=white" alt="OpenAPI Contracts" />
+</p>
+
+| Layer | Technology |
+|---|---|
+| **Frontend** | React + TypeScript |
+| **Backend** | **ASP.NET APIs** (.NET 10) |
+| **AI Service** | Python + FastAPI |
+| **Database** | PostgreSQL |
+| **Graph Engine** | NetworkX |
+| **Knowledge** | ESCO Taxonomy |
+| **Contracts** | OpenAPI + TypeScript types |
 
 ---
 
@@ -9,8 +37,8 @@
 
 ```mermaid
 flowchart LR
-    U[User] --> FE[Angular Frontend]
-    FE --> API[ASP.NET Core API]
+    U[User] --> FE[React Frontend]
+    FE --> API[ASP.NET APIs]
 
     API --> APP[Application Layer]
     APP --> DOM[Domain Layer]
@@ -35,8 +63,8 @@ flowchart LR
 
 | Layer | Responsibility | Primary technology |
 |---|---|---|
-| **Frontend** | User experience, visualisation, interaction | Angular + TypeScript |
-| **Backend** | Application orchestration, business rules, API | ASP.NET Core / .NET 10 |
+| **Frontend** | User experience, visualisation, interaction | React + TypeScript |
+| **Backend** | Application orchestration, business rules, API | ASP.NET APIs / .NET 10 |
 | **AI** | Skill extraction, embeddings, gap analysis, recommendations | Python + FastAPI |
 | **Graph** | Skill/prerequisite representation and path structure | NetworkX |
 | **Knowledge** | Taxonomy, schemas, seed knowledge and domain data | ESCO + project knowledge |
@@ -72,7 +100,7 @@ PathGraph/
 ### `frontend/` — Presentation Layer
 Owns everything visible and interactive.
 
-- Angular application structure
+- React application structure
 - Authentication and navigation
 - Career and skill views
 - Learning-path visualisation
@@ -105,8 +133,8 @@ backend/
 | `PathGraph.Infrastructure` | Persistence, external services and technical implementations |
 | `backend/tests/` | Unit, integration and architectural tests |
 
-**Dependency direction:**  
-`Api → Application → Domain`  
+**Dependency direction:**
+`Api → Application → Domain`
 `Api → Infrastructure → Application/Domain`
 
 The Domain layer remains independent of infrastructure concerns.
@@ -220,7 +248,7 @@ Ownership is **area-based**: contributors may collaborate across boundaries, but
 
 | Team | Primary ownership | Core duties |
 |---|---|---|
-| **Frontend** | `frontend/` | UI, UX, Angular features, visualisations, frontend integration |
+| **Frontend** | `frontend/` | UI, UX, React features, visualisations, frontend integration |
 | **Backend** | `backend/src/` | API, application logic, domain model, service orchestration |
 | **Database** | `backend/src/PathGraph.Infrastructure/` | Schema, persistence, migrations, query efficiency and data integrity |
 | **AI** | `ai/` | AI pipeline, embeddings, inference service and model integration |
@@ -230,7 +258,7 @@ Ownership is **area-based**: contributors may collaborate across boundaries, but
 
 ### Ownership rule
 
-> **Own the implementation, not the entire product.**  
+> **Own the implementation, not the entire product.**
 > A team is responsible for the integrity of its area and for maintaining a clean interface with neighbouring areas.
 
 ---
@@ -294,7 +322,7 @@ Learning Path
        ↓
 Backend API
        ↓
-Angular UI
+React UI
 ```
 
 The intended design separates **probabilistic intelligence** from **deterministic structure**:
