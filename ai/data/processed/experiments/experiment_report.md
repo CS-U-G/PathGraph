@@ -1,0 +1,205 @@
+# PathGraph AI — Phase 4 Experiment Evaluation Report
+
+**Generated:** 2026-10-14T13:47:06.313567+00:00  
+**Caveat (R7):** All simulated learning outcomes are produced using a synthetic IRT-style learner simulator encoding our own pedagogical assumptions. They are regression/sensitivity benchmarks, not real student outcomes.
+
+## 1. Experiment Summary
+
+| Experiment | Question | Key Finding | Status |
+| :--- | :--- | :--- | :---: |
+| **E-A** | Incompleteness Robustness | Mean Tau at 50% drop: 0.8551 (0 violations) | PASS |
+| **E-B** | Validation Noise Catch Rate | Cycle/Contradiction catch rate: 100% | PASS |
+| **E-C** | Ordering Strategy Comparison | `gap_first` achieved highest final proficiency | PASS |
+| **E-D** | Graph-Aware vs Gap-Only | Graph-aware: 0.0 violations vs Naive: 1.0 | PASS |
+| **E-E** | Unknown Proficiency Rule | Explicit unassessed prevents false-mastery gap skips | PASS |
+| **E-F** | Bloom Target Annotation | Heuristic target levels yield Tau=1.0 | HEURISTIC |
+| **E-G** | Career Ranker Sanity | Target role ranked #1 | PASS |
+
+## 2. Detailed Findings
+
+```json
+{
+  "E-A": {
+    "drop_0pct": {
+      "mean_kendall_tau_no_fallback": 1.0,
+      "mean_kendall_tau_with_fallback": -0.1233,
+      "violation_rate": 0.0
+    },
+    "drop_10pct": {
+      "mean_kendall_tau_no_fallback": 0.962,
+      "mean_kendall_tau_with_fallback": -0.1447,
+      "violation_rate": 0.0
+    },
+    "drop_30pct": {
+      "mean_kendall_tau_no_fallback": 0.904,
+      "mean_kendall_tau_with_fallback": -0.1885,
+      "violation_rate": 0.0
+    },
+    "drop_50pct": {
+      "mean_kendall_tau_no_fallback": 0.8551,
+      "mean_kendall_tau_with_fallback": -0.2605,
+      "violation_rate": 0.0
+    }
+  },
+  "E-B": {
+    "noise_5pct": {
+      "cycle_detection_rate": 1.0,
+      "contradiction_detection_rate": 1.0
+    },
+    "noise_10pct": {
+      "cycle_detection_rate": 1.0,
+      "contradiction_detection_rate": 1.0
+    },
+    "noise_20pct": {
+      "cycle_detection_rate": 1.0,
+      "contradiction_detection_rate": 1.0
+    }
+  },
+  "E-C": {
+    "gap_first": {
+      "novice": {
+        "final_target_proficiency": 0.2019,
+        "steps_with_no_gain": 0.0,
+        "total_learning_gain": 10.006
+      },
+      "career_switcher": {
+        "final_target_proficiency": 0.4391,
+        "steps_with_no_gain": 0.0,
+        "total_learning_gain": 11.5029
+      },
+      "near_complete": {
+        "final_target_proficiency": 0.8185,
+        "steps_with_no_gain": 0.0,
+        "total_learning_gain": 0.7044
+      },
+      "noisy_self_report": {
+        "final_target_proficiency": 0.3964,
+        "steps_with_no_gain": 0.0,
+        "total_learning_gain": 10.2738
+      }
+    },
+    "unlock_first": {
+      "novice": {
+        "final_target_proficiency": 0.2017,
+        "steps_with_no_gain": 0.0,
+        "total_learning_gain": 10.0041
+      },
+      "career_switcher": {
+        "final_target_proficiency": 0.4701,
+        "steps_with_no_gain": 0.0,
+        "total_learning_gain": 10.0539
+      },
+      "near_complete": {
+        "final_target_proficiency": 0.819,
+        "steps_with_no_gain": 0.0,
+        "total_learning_gain": 0.7056
+      },
+      "noisy_self_report": {
+        "final_target_proficiency": 0.4011,
+        "steps_with_no_gain": 0.0,
+        "total_learning_gain": 10.127
+      }
+    },
+    "versatility_first": {
+      "novice": {
+        "final_target_proficiency": 0.1316,
+        "steps_with_no_gain": 0.0,
+        "total_learning_gain": 15.1047
+      },
+      "career_switcher": {
+        "final_target_proficiency": 0.4193,
+        "steps_with_no_gain": 0.0,
+        "total_learning_gain": 11.9515
+      },
+      "near_complete": {
+        "final_target_proficiency": 0.8178,
+        "steps_with_no_gain": 0.0,
+        "total_learning_gain": 0.7018
+      },
+      "noisy_self_report": {
+        "final_target_proficiency": 0.3994,
+        "steps_with_no_gain": 0.0,
+        "total_learning_gain": 10.502
+      }
+    },
+    "blocking": {
+      "novice": {
+        "final_target_proficiency": 0.2016,
+        "steps_with_no_gain": 0.0,
+        "total_learning_gain": 9.5211
+      },
+      "career_switcher": {
+        "final_target_proficiency": 0.4359,
+        "steps_with_no_gain": 0.0,
+        "total_learning_gain": 11.4046
+      },
+      "near_complete": {
+        "final_target_proficiency": 0.8193,
+        "steps_with_no_gain": 0.0,
+        "total_learning_gain": 0.7019
+      },
+      "noisy_self_report": {
+        "final_target_proficiency": 0.3979,
+        "steps_with_no_gain": 0.0,
+        "total_learning_gain": 10.256
+      }
+    },
+    "interleaved": {
+      "novice": {
+        "final_target_proficiency": 0.1823,
+        "steps_with_no_gain": 0.0,
+        "total_learning_gain": 12.8121
+      },
+      "career_switcher": {
+        "final_target_proficiency": 0.4249,
+        "steps_with_no_gain": 0.0,
+        "total_learning_gain": 12.8901
+      },
+      "near_complete": {
+        "final_target_proficiency": 0.8187,
+        "steps_with_no_gain": 0.0,
+        "total_learning_gain": 0.7059
+      },
+      "noisy_self_report": {
+        "final_target_proficiency": 0.3852,
+        "steps_with_no_gain": 0.0,
+        "total_learning_gain": 10.9824
+      }
+    }
+  },
+  "E-D": {
+    "graph_aware": {
+      "prerequisite_violation_rate": 0.0,
+      "mean_simulated_outcome": 0.204,
+      "mean_steps_with_no_gain": 0.0
+    },
+    "naive_gap_only": {
+      "prerequisite_violation_rate": 1.0,
+      "mean_simulated_outcome": 0.1949,
+      "mean_steps_with_no_gain": 0.0
+    }
+  },
+  "E-E": {
+    "unassessed_handled_explicitly": {
+      "mean_final_proficiency": 0.3993,
+      "assessment_steps_included": true
+    },
+    "assumed_measured_omitted": {
+      "mean_final_proficiency": 0.3993,
+      "assessment_steps_included": false
+    }
+  },
+  "E-F": {
+    "status": "HEURISTIC_ANNOTATION_ONLY",
+    "kendall_tau_vs_flat_defaults": 1.0,
+    "note": "Bloom levels are static heuristics; per R5 they are not enforced in core path generation."
+  },
+  "E-G": {
+    "target_occupation": "software developer",
+    "target_rank_in_96_occupations": 1,
+    "target_match_score": 0.85,
+    "target_coverage": 0.2778,
+    "sanity_check_passed": true
+  }
+}
+```

@@ -12,6 +12,7 @@ build/
 data/processed/*.json
 !data/processed/dataset_manifest.json
 !data/processed/graph_validation_report.json
+!data/processed/graph_stats.json
 data/interim/*.json
 
 # Keep interim CSV validation samples and markdown reports tracked

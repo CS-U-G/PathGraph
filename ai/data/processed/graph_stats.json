@@ -1,0 +1,55 @@
+{
+  "node_counts": {
+    "occupations": 96,
+    "skills": 13939,
+    "active_prerequisite_skills": 89,
+    "unknown_prerequisites_skills": 13850
+  },
+  "edge_counts": {
+    "requirement_edges": 5976,
+    "taxonomy_edges": 2017,
+    "association_edges": 493,
+    "prerequisite_edges": 125
+  },
+  "seed_occupations_coverage": {
+    "software developer": {
+      "occupation_uri": "http://data.europa.eu/esco/occupation/f2b15a0e-e65a-438a-affb-29b9d50b77d1",
+      "essential_skills_count": 24,
+      "skills_with_prerequisites_count": 23,
+      "prerequisite_coverage_ratio": 0.9583,
+      "prerequisite_coverage_percentage": "95.8%"
+    },
+    "web developer": {
+      "occupation_uri": "http://data.europa.eu/esco/occupation/c40a2919-48a9-40ea-b506-1f34f693496d",
+      "essential_skills_count": 26,
+      "skills_with_prerequisites_count": 25,
+      "prerequisite_coverage_ratio": 0.9615,
+      "prerequisite_coverage_percentage": "96.2%"
+    },
+    "data engineer": {
+      "occupation_uri": "http://data.europa.eu/esco/occupation/2079755f-d809-49e6-8037-4de6180e54c0",
+      "essential_skills_count": 23,
+      "skills_with_prerequisites_count": 16,
+      "prerequisite_coverage_ratio": 0.6957,
+      "prerequisite_coverage_percentage": "69.6%"
+    },
+    "ICT system administrator": {
+      "occupation_uri": "http://data.europa.eu/esco/occupation/9e2e6e1e-363b-4e1b-a673-7bc0f7343300",
+      "essential_skills_count": 32,
+      "skills_with_prerequisites_count": 27,
+      "prerequisite_coverage_ratio": 0.8438,
+      "prerequisite_coverage_percentage": "84.4%"
+    },
+    "ethical hacker": {
+      "occupation_uri": "http://data.europa.eu/esco/occupation/76ef0a87-6afe-4560-b5d0-9a086abe45c5",
+      "essential_skills_count": 36,
+      "skills_with_prerequisites_count": 17,
+      "prerequisite_coverage_ratio": 0.4722,
+      "prerequisite_coverage_percentage": "47.2%"
+    }
+  },
+  "prerequisite_depth_metrics": {
+    "max_depth": 5,
+    "mean_depth": 1.989
+  }
+}

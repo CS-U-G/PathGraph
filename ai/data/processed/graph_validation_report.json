@@ -1,0 +1,135 @@
+{
+  "report_id": "gvr-1791980766",
+  "generated_at": "2026-10-14T12:26:06.329318+00:00",
+  "graph_version": "1.0.0",
+  "esco_version": "v1.2.1",
+  "overall_pass": true,
+  "total_checks": 8,
+  "passed_checks": 8,
+  "failed_checks": 0,
+  "summary": {
+    "V1": "PASS",
+    "V2": "PASS",
+    "V3": "PASS",
+    "V4": "PASS",
+    "V5": "PASS",
+    "V6": "PASS",
+    "V7": "PASS",
+    "V8": "PASS"
+  },
+  "checks": {
+    "V1": {
+      "check_id": "V1",
+      "name": "No dangling edges",
+      "description": "All edges in all layers connect existing registered nodes.",
+      "passed": true,
+      "violations_count": 0,
+      "details": {
+        "dangling_requirement_edges": [],
+        "dangling_association_edges": [],
+        "dangling_prerequisite_edges": []
+      }
+    },
+    "V2": {
+      "check_id": "V2",
+      "name": "Prerequisite layer is a DAG",
+      "description": "The prerequisite graph must be strictly acyclic; report SCCs on failure.",
+      "passed": true,
+      "violations_count": 0,
+      "details": {
+        "is_dag": true,
+        "strongly_connected_components": []
+      }
+    },
+    "V3": {
+      "check_id": "V3",
+      "name": "Minimum essential skills per occupation",
+      "description": "Every core computing occupation must require at least 3 essential skills.",
+      "passed": true,
+      "violations_count": 0,
+      "details": {
+        "total_occupations_audited": 96,
+        "failing_occupations": []
+      }
+    },
+    "V4": {
+      "check_id": "V4",
+      "name": "All scores bounded in [0, 1]",
+      "description": "All proficiencies, weights, confidences, and versatility metrics bounded in [0, 1].",
+      "passed": true,
+      "violations_count": 0,
+      "details": {
+        "violations_sample": []
+      }
+    },
+    "V5": {
+      "check_id": "V5",
+      "name": "Strict prerequisites reachable from root nodes",
+      "description": "Every active prerequisite node is reachable from an in-degree 0 root node.",
+      "passed": true,
+      "violations_count": 0,
+      "details": {
+        "active_nodes_count": 89,
+        "root_nodes_count": 13,
+        "unreachable_nodes": []
+      }
+    },
+    "V6": {
+      "check_id": "V6",
+      "name": "Reason codes contract parity",
+      "description": "Emitted reason codes must maintain exact parity with OpenAPI ReasonCode enum.",
+      "passed": true,
+      "violations_count": 0,
+      "details": {
+        "contract_reason_codes": [
+          "HIGH_DEMAND",
+          "HIGH_RELEVANCE",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED",
+          "REQUIRED_BY_TARGET",
+          "STEPPING_STONE",
+          "TRANSVERSAL_FOUNDATION"
+        ],
+        "expected_reason_codes": [
+          "HIGH_DEMAND",
+          "HIGH_RELEVANCE",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED",
+          "REQUIRED_BY_TARGET",
+          "STEPPING_STONE",
+          "TRANSVERSAL_FOUNDATION"
+        ],
+        "difference": []
+      }
+    },
+    "V7": {
+      "check_id": "V7",
+      "name": "Prerequisite provenance and confidence present",
+      "description": "Every prerequisite edge must specify non-empty provenance and valid confidence.",
+      "passed": true,
+      "violations_count": 0,
+      "details": {
+        "missing_edges": []
+      }
+    },
+    "V8": {
+      "check_id": "V8",
+      "name": "Duplicate or contradictory edges flagged",
+      "description": "Zero bidirectional contradictory edges in the prerequisite DAG.",
+      "passed": true,
+      "violations_count": 0,
+      "details": {
+        "contradictory_cycles": []
+      }
+    }
+  },
+  "graph_metrics": {
+    "occupations_count": 96,
+    "skills_count": 13939,
+    "unknown_prerequisites_skills_count": 13850,
+    "requirement_edges_count": 5976,
+    "taxonomy_edges_count": 2017,
+    "association_edges_count": 493,
+    "prerequisite_edges_count": 125
+  }
+}

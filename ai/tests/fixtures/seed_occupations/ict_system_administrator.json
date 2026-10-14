@@ -1,0 +1,879 @@
+{
+  "occupation_slug": "ict_system_administrator",
+  "occupation_uri": "http://data.europa.eu/esco/occupation/9e2e6e1e-363b-4e1b-a673-7bc0f7343300",
+  "request": {
+    "learner": {
+      "skills": [
+        {
+          "skill_id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+          "label": "computer programming",
+          "proficiency": 0.6
+        }
+      ],
+      "target": {
+        "occupation_id": "http://data.europa.eu/esco/occupation/9e2e6e1e-363b-4e1b-a673-7bc0f7343300",
+        "target_type": "occupation",
+        "custom_goal": null
+      }
+    }
+  },
+  "response": {
+    "learning_path": [
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/9ff9db9d-d14b-426e-83f3-e7449af6c79f",
+        "label": "manage data",
+        "priority": 1,
+        "gap": 0.5,
+        "prerequisite_satisfied": true,
+        "relevance": 0.32,
+        "demand": 0.1118,
+        "estimated_cost": null,
+        "reason": "Foundational prerequisite required to unlock 'store digital data and systems' with proficiency gap of 0.50.",
+        "reason_codes": [
+          "STEPPING_STONE",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/4463a721-69f3-413d-8321-43e3af13a4f1",
+        "label": "use databases",
+        "priority": 2,
+        "gap": 0.5,
+        "prerequisite_satisfied": true,
+        "relevance": 0.8,
+        "demand": 0.0882,
+        "estimated_cost": null,
+        "reason": "Foundational prerequisite required to unlock 'migrate existing data' with proficiency gap of 0.50.",
+        "reason_codes": [
+          "STEPPING_STONE",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED",
+          "TRANSVERSAL_FOUNDATION",
+          "HIGH_RELEVANCE"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/209a5498-3449-4689-8ed9-bd08cab4fd78",
+        "label": "engineering principles",
+        "priority": 3,
+        "gap": 0.5,
+        "prerequisite_satisfied": true,
+        "relevance": 0.8,
+        "demand": 0.5294,
+        "estimated_cost": null,
+        "reason": "Foundational prerequisite required to unlock 'ICT system programming' with proficiency gap of 0.50.",
+        "reason_codes": [
+          "STEPPING_STONE",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED",
+          "TRANSVERSAL_FOUNDATION",
+          "HIGH_RELEVANCE",
+          "HIGH_DEMAND"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/a846cb9e-c152-41e7-bd34-45e7ff941e3b",
+        "label": "legal requirements of ICT products",
+        "priority": 4,
+        "gap": 0.5,
+        "prerequisite_satisfied": true,
+        "relevance": 0.32,
+        "demand": 0.0559,
+        "estimated_cost": null,
+        "reason": "Foundational prerequisite required to unlock 'information security strategy' with proficiency gap of 0.50.",
+        "reason_codes": [
+          "STEPPING_STONE",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED",
+          "TRANSVERSAL_FOUNDATION"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/d78dedfc-21d2-45fd-ba05-e56b7a8865e6",
+        "label": "network standards",
+        "priority": 5,
+        "gap": 0.75,
+        "prerequisite_satisfied": true,
+        "relevance": 1.0,
+        "demand": 0.0206,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as essential competency with proficiency gap of 0.75.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED",
+          "HIGH_RELEVANCE"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/3a5231a0-8c30-48ee-b671-08e2debd4441",
+        "label": "organisational policies",
+        "priority": 6,
+        "gap": 0.75,
+        "prerequisite_satisfied": true,
+        "relevance": 1.0,
+        "demand": 0.0735,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as essential competency with proficiency gap of 0.75.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED",
+          "HIGH_RELEVANCE"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/4b51e76e-9e8a-455f-a289-5b48246345c4",
+        "label": "hardware components",
+        "priority": 7,
+        "gap": 0.75,
+        "prerequisite_satisfied": true,
+        "relevance": 1.0,
+        "demand": 0.05,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as essential competency with proficiency gap of 0.75.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED",
+          "TRANSVERSAL_FOUNDATION",
+          "HIGH_RELEVANCE"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/f9a6f35b-01a7-40c9-8b61-b6ee46f97272",
+        "label": "operating systems",
+        "priority": 8,
+        "gap": 0.75,
+        "prerequisite_satisfied": true,
+        "relevance": 1.0,
+        "demand": 0.0235,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as essential competency with proficiency gap of 0.75.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED",
+          "HIGH_RELEVANCE"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/8088750d-8388-4170-a76f-48354c469c44",
+        "label": "cyber security",
+        "priority": 9,
+        "gap": 0.5,
+        "prerequisite_satisfied": true,
+        "relevance": 0.32,
+        "demand": 0.0647,
+        "estimated_cost": null,
+        "reason": "Foundational prerequisite required to unlock 'information security strategy' with proficiency gap of 0.50.",
+        "reason_codes": [
+          "STEPPING_STONE",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/3ff589b7-68df-4ea5-ae41-b395bdb2378f",
+        "label": "ICT security standards",
+        "priority": 10,
+        "gap": 0.5,
+        "prerequisite_satisfied": true,
+        "relevance": 0.32,
+        "demand": 0.0529,
+        "estimated_cost": null,
+        "reason": "Foundational prerequisite required to unlock 'information security strategy' with proficiency gap of 0.50.",
+        "reason_codes": [
+          "STEPPING_STONE",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/397da142-ab35-48fe-b154-7c38f447adfb",
+        "label": "digital systems",
+        "priority": 11,
+        "gap": 0.75,
+        "prerequisite_satisfied": true,
+        "relevance": 1.0,
+        "demand": 0.0882,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as essential competency with proficiency gap of 0.75.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED",
+          "TRANSVERSAL_FOUNDATION",
+          "HIGH_RELEVANCE"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/d0c6d77e-cb25-4770-bf77-2073fc5f7523",
+        "label": "ICT infrastructure",
+        "priority": 12,
+        "gap": 0.75,
+        "prerequisite_satisfied": true,
+        "relevance": 1.0,
+        "demand": 0.05,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as essential competency with proficiency gap of 0.75.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED",
+          "HIGH_RELEVANCE"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/0868eef3-2213-4572-9343-74931345a7d3",
+        "label": "administer ICT system",
+        "priority": 13,
+        "gap": 0.75,
+        "prerequisite_satisfied": true,
+        "relevance": 1.0,
+        "demand": 0.0294,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as essential competency with proficiency gap of 0.75.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED",
+          "HIGH_RELEVANCE"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/85c11255-469f-41bd-a6d1-382bc4a87783",
+        "label": "interpret technical texts",
+        "priority": 14,
+        "gap": 0.75,
+        "prerequisite_satisfied": true,
+        "relevance": 1.0,
+        "demand": 0.0588,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as essential competency with proficiency gap of 0.75.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED",
+          "HIGH_RELEVANCE"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/07e47d58-dd0e-4302-9e68-70a188e89065",
+        "label": "apply system organisational policies",
+        "priority": 15,
+        "gap": 0.75,
+        "prerequisite_satisfied": true,
+        "relevance": 1.0,
+        "demand": 0.0206,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as essential competency with proficiency gap of 0.75.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED",
+          "TRANSVERSAL_FOUNDATION",
+          "HIGH_RELEVANCE"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/fbbcb9ab-4b95-4e57-a756-30d08b7da7a5",
+        "label": "maintain ICT system",
+        "priority": 16,
+        "gap": 0.75,
+        "prerequisite_satisfied": true,
+        "relevance": 1.0,
+        "demand": 0.0088,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as essential competency with proficiency gap of 0.75.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED",
+          "HIGH_RELEVANCE"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/6f1edc19-191f-4ba5-a048-ee69aff05bab",
+        "label": "security engineering",
+        "priority": 17,
+        "gap": 0.75,
+        "prerequisite_satisfied": true,
+        "relevance": 1.0,
+        "demand": 0.0559,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as essential competency with proficiency gap of 0.75.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED",
+          "TRANSVERSAL_FOUNDATION",
+          "HIGH_RELEVANCE"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/071233c4-ad2b-4f50-b79f-768d2231163e",
+        "label": "domain name service",
+        "priority": 18,
+        "gap": 0.75,
+        "prerequisite_satisfied": true,
+        "relevance": 1.0,
+        "demand": 0.0176,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as essential competency with proficiency gap of 0.75.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED",
+          "HIGH_RELEVANCE"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/db36f7f1-5900-45bd-9ffb-f2b19c4362ac",
+        "label": "support ICT system users",
+        "priority": 19,
+        "gap": 0.75,
+        "prerequisite_satisfied": true,
+        "relevance": 1.0,
+        "demand": 0.0176,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as essential competency with proficiency gap of 0.75.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED",
+          "HIGH_RELEVANCE"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/c7cc6dc5-d56b-4323-8e5c-47c4022f615f",
+        "label": "quality assurance methodologies",
+        "priority": 20,
+        "gap": 0.75,
+        "prerequisite_satisfied": true,
+        "relevance": 1.0,
+        "demand": 0.2176,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as essential competency with proficiency gap of 0.75.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED",
+          "TRANSVERSAL_FOUNDATION",
+          "HIGH_RELEVANCE"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/14d1e367-3efe-4ec5-86ae-eca48710ee4e",
+        "label": "implement ICT security policies",
+        "priority": 21,
+        "gap": 0.75,
+        "prerequisite_satisfied": true,
+        "relevance": 1.0,
+        "demand": 0.1,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as essential competency with proficiency gap of 0.75.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED",
+          "HIGH_RELEVANCE"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/acf0a78c-f4e3-4bd9-a5cc-9cf4791b3b95",
+        "label": "implement a virtual private network",
+        "priority": 22,
+        "gap": 0.75,
+        "prerequisite_satisfied": true,
+        "relevance": 1.0,
+        "demand": 0.0941,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as essential competency with proficiency gap of 0.75.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED",
+          "HIGH_RELEVANCE"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/ed8de897-adbe-4f0e-b4d2-534953e64c72",
+        "label": "integrate system components",
+        "priority": 23,
+        "gap": 0.75,
+        "prerequisite_satisfied": true,
+        "relevance": 1.0,
+        "demand": 0.0794,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as essential competency with proficiency gap of 0.75.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED",
+          "HIGH_RELEVANCE"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/e5b5053e-0ef6-4c4e-a3f2-42f955f4322c",
+        "label": "implement a firewall",
+        "priority": 24,
+        "gap": 0.75,
+        "prerequisite_satisfied": true,
+        "relevance": 1.0,
+        "demand": 0.0735,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as essential competency with proficiency gap of 0.75.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED",
+          "HIGH_RELEVANCE"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/bb2b4485-2bad-402f-8517-44bf7d9afff4",
+        "label": "implement anti-virus software",
+        "priority": 25,
+        "gap": 0.75,
+        "prerequisite_satisfied": true,
+        "relevance": 1.0,
+        "demand": 0.0676,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as essential competency with proficiency gap of 0.75.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED",
+          "HIGH_RELEVANCE"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/ca73ac82-867a-4afa-9732-834aebe896ff",
+        "label": "ICT system user requirements",
+        "priority": 26,
+        "gap": 0.75,
+        "prerequisite_satisfied": true,
+        "relevance": 1.0,
+        "demand": 0.0588,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as essential competency with proficiency gap of 0.75.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED",
+          "HIGH_RELEVANCE"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/020918ef-4b55-47c1-8430-ab7b8f6a7377",
+        "label": "migrate existing data",
+        "priority": 27,
+        "gap": 0.75,
+        "prerequisite_satisfied": true,
+        "relevance": 1.0,
+        "demand": 0.0529,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as essential competency with proficiency gap of 0.75.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED",
+          "HIGH_RELEVANCE"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/9e06bac6-6b91-48ca-8b7d-c1f48cdecd7c",
+        "label": "solve ICT system problems",
+        "priority": 28,
+        "gap": 0.75,
+        "prerequisite_satisfied": true,
+        "relevance": 1.0,
+        "demand": 0.0529,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as essential competency with proficiency gap of 0.75.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED",
+          "TRANSVERSAL_FOUNDATION",
+          "HIGH_RELEVANCE"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/b105ec9b-0857-41d6-8d07-a83e58b73d90",
+        "label": "ICT system programming",
+        "priority": 29,
+        "gap": 0.75,
+        "prerequisite_satisfied": true,
+        "relevance": 1.0,
+        "demand": 0.0529,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as essential competency with proficiency gap of 0.75.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED",
+          "HIGH_RELEVANCE"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/9190d87f-9792-42e0-bb7f-64294a656bcd",
+        "label": "monitor system performance",
+        "priority": 30,
+        "gap": 0.75,
+        "prerequisite_satisfied": true,
+        "relevance": 1.0,
+        "demand": 0.0471,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as essential competency with proficiency gap of 0.75.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED",
+          "HIGH_RELEVANCE"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/484df271-bb52-49f1-8f50-f19624bf4df2",
+        "label": "software components libraries",
+        "priority": 31,
+        "gap": 0.75,
+        "prerequisite_satisfied": true,
+        "relevance": 1.0,
+        "demand": 0.0441,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as essential competency with proficiency gap of 0.75.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED",
+          "HIGH_RELEVANCE"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/1e7ed56a-6d6b-422f-962e-38543d150755",
+        "label": "manage changes in ICT system",
+        "priority": 32,
+        "gap": 0.75,
+        "prerequisite_satisfied": true,
+        "relevance": 1.0,
+        "demand": 0.0294,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as essential competency with proficiency gap of 0.75.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED",
+          "HIGH_RELEVANCE"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/2a3a96a3-709e-4d60-81f6-d247d6933f13",
+        "label": "manage system security",
+        "priority": 33,
+        "gap": 0.75,
+        "prerequisite_satisfied": true,
+        "relevance": 1.0,
+        "demand": 0.0294,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as essential competency with proficiency gap of 0.75.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED",
+          "HIGH_RELEVANCE"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/ce354460-500e-4eaa-8e95-8f243fcea3db",
+        "label": "manage system testing",
+        "priority": 34,
+        "gap": 0.75,
+        "prerequisite_satisfied": true,
+        "relevance": 1.0,
+        "demand": 0.0265,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as essential competency with proficiency gap of 0.75.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED",
+          "HIGH_RELEVANCE"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/9707091a-323b-4240-877a-5999a19286f0",
+        "label": "apply ICT system usage policies",
+        "priority": 35,
+        "gap": 0.75,
+        "prerequisite_satisfied": true,
+        "relevance": 1.0,
+        "demand": 0.0206,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as essential competency with proficiency gap of 0.75.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED",
+          "HIGH_RELEVANCE"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/fc2f1d4f-a46f-471e-a618-cbd4d0496a53",
+        "label": "implement ICT recovery system",
+        "priority": 36,
+        "gap": 0.75,
+        "prerequisite_satisfied": true,
+        "relevance": 1.0,
+        "demand": 0.0176,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as essential competency with proficiency gap of 0.75.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED",
+          "HIGH_RELEVANCE"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/72a74f69-5cf1-43c5-99b9-62a444578919",
+        "label": "engineering processes",
+        "priority": 37,
+        "gap": 0.5,
+        "prerequisite_satisfied": true,
+        "relevance": 0.4,
+        "demand": 0.4824,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as optional competency with proficiency gap of 0.50.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/611ed16b-99bf-4840-9cab-f55d1d286e0a",
+        "label": "store digital data and systems",
+        "priority": 38,
+        "gap": 0.5,
+        "prerequisite_satisfied": true,
+        "relevance": 0.4,
+        "demand": 0.0235,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as optional competency with proficiency gap of 0.50.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED",
+          "TRANSVERSAL_FOUNDATION"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/cf3e976d-2c3e-495c-a874-f9e8a66d3b48",
+        "label": "perform backups",
+        "priority": 39,
+        "gap": 0.75,
+        "prerequisite_satisfied": true,
+        "relevance": 1.0,
+        "demand": 0.0412,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as essential competency with proficiency gap of 0.75.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED",
+          "HIGH_RELEVANCE"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/82de2df7-0d6c-42b1-94ac-b3e9a029e917",
+        "label": "use back-up and recovery tools",
+        "priority": 40,
+        "gap": 0.75,
+        "prerequisite_satisfied": true,
+        "relevance": 1.0,
+        "demand": 0.05,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as essential competency with proficiency gap of 0.75.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED",
+          "TRANSVERSAL_FOUNDATION",
+          "HIGH_RELEVANCE"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/415abd43-e8e5-4643-b5da-5f11307af57a",
+        "label": "use different communication channels",
+        "priority": 41,
+        "gap": 0.5,
+        "prerequisite_satisfied": true,
+        "relevance": 0.4,
+        "demand": 1.0,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as optional competency with proficiency gap of 0.50.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED",
+          "TRANSVERSAL_FOUNDATION",
+          "HIGH_DEMAND"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/bd14968e-e409-45af-b362-3495ed7b10e0",
+        "label": "cloud technologies",
+        "priority": 42,
+        "gap": 0.5,
+        "prerequisite_satisfied": true,
+        "relevance": 0.4,
+        "demand": 0.1353,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as optional competency with proficiency gap of 0.50.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/09f2f811-a3fb-4de3-a70f-6420a6935575",
+        "label": "systems development life-cycle",
+        "priority": 43,
+        "gap": 0.5,
+        "prerequisite_satisfied": true,
+        "relevance": 0.4,
+        "demand": 0.1,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as optional competency with proficiency gap of 0.50.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED",
+          "TRANSVERSAL_FOUNDATION"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/d3286405-49f8-4e8a-8046-a4376b4e7963",
+        "label": "manage cloud data and storage",
+        "priority": 44,
+        "gap": 0.5,
+        "prerequisite_satisfied": true,
+        "relevance": 0.4,
+        "demand": 0.0676,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as optional competency with proficiency gap of 0.50.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/11eebd42-44ab-401d-8a2c-bdb9fc9beb50",
+        "label": "information security strategy",
+        "priority": 45,
+        "gap": 0.5,
+        "prerequisite_satisfied": true,
+        "relevance": 0.4,
+        "demand": 0.0559,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as optional competency with proficiency gap of 0.50.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/69cfc5ed-6569-4aca-a4cc-fd782ba51d9c",
+        "label": "implement ICT risk management",
+        "priority": 46,
+        "gap": 0.5,
+        "prerequisite_satisfied": true,
+        "relevance": 0.4,
+        "demand": 0.0412,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as optional competency with proficiency gap of 0.50.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/8359bd04-d2cb-4757-af1f-39a921df9efe",
+        "label": "remove computer virus or malware from a computer",
+        "priority": 47,
+        "gap": 0.5,
+        "prerequisite_satisfied": true,
+        "relevance": 0.4,
+        "demand": 0.0412,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as optional competency with proficiency gap of 0.50.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED",
+          "TRANSVERSAL_FOUNDATION"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/1c2978b8-bb0d-4249-9c23-877571a4dffa",
+        "label": "cloud security and compliance",
+        "priority": 48,
+        "gap": 0.5,
+        "prerequisite_satisfied": true,
+        "relevance": 0.4,
+        "demand": 0.0353,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as optional competency with proficiency gap of 0.50.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/5063a99f-975b-4a7c-85e3-69ecb375b4d3",
+        "label": "internet governance",
+        "priority": 49,
+        "gap": 0.5,
+        "prerequisite_satisfied": true,
+        "relevance": 0.4,
+        "demand": 0.0324,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as optional competency with proficiency gap of 0.50.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/6fa1c2c0-a012-4ca0-9642-e01569ba322c",
+        "label": "ICT system integration",
+        "priority": 50,
+        "gap": 0.5,
+        "prerequisite_satisfied": true,
+        "relevance": 0.4,
+        "demand": 0.0324,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as optional competency with proficiency gap of 0.50.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED"
+        ]
+      }
+    ],
+    "meta": {
+      "target_occupation_id": "http://data.europa.eu/esco/occupation/9e2e6e1e-363b-4e1b-a673-7bc0f7343300",
+      "unresolved_skills": [],
+      "generated_at": "2026-10-14T13:52:39.994546Z"
+    }
+  }
+}

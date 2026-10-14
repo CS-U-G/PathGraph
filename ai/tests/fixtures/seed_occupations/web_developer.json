@@ -1,0 +1,875 @@
+{
+  "occupation_slug": "web_developer",
+  "occupation_uri": "http://data.europa.eu/esco/occupation/c40a2919-48a9-40ea-b506-1f34f693496d",
+  "request": {
+    "learner": {
+      "skills": [
+        {
+          "skill_id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+          "label": "computer programming",
+          "proficiency": 0.6
+        }
+      ],
+      "target": {
+        "occupation_id": "http://data.europa.eu/esco/occupation/c40a2919-48a9-40ea-b506-1f34f693496d",
+        "target_type": "occupation",
+        "custom_goal": null
+      }
+    }
+  },
+  "response": {
+    "learning_path": [
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/9ff9db9d-d14b-426e-83f3-e7449af6c79f",
+        "label": "manage data",
+        "priority": 1,
+        "gap": 0.5,
+        "prerequisite_satisfied": true,
+        "relevance": 0.32,
+        "demand": 0.1118,
+        "estimated_cost": null,
+        "reason": "Foundational prerequisite required to unlock 'migrate existing data' with proficiency gap of 0.50.",
+        "reason_codes": [
+          "STEPPING_STONE",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/d78dedfc-21d2-45fd-ba05-e56b7a8865e6",
+        "label": "network standards",
+        "priority": 2,
+        "gap": 0.5,
+        "prerequisite_satisfied": true,
+        "relevance": 0.8,
+        "demand": 0.0206,
+        "estimated_cost": null,
+        "reason": "Foundational prerequisite required to unlock 'domain name service' with proficiency gap of 0.50.",
+        "reason_codes": [
+          "STEPPING_STONE",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED",
+          "HIGH_RELEVANCE"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/4463a721-69f3-413d-8321-43e3af13a4f1",
+        "label": "use databases",
+        "priority": 3,
+        "gap": 0.5,
+        "prerequisite_satisfied": true,
+        "relevance": 0.32,
+        "demand": 0.0882,
+        "estimated_cost": null,
+        "reason": "Foundational prerequisite required to unlock 'migrate existing data' with proficiency gap of 0.50.",
+        "reason_codes": [
+          "STEPPING_STONE",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED",
+          "TRANSVERSAL_FOUNDATION"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/209a5498-3449-4689-8ed9-bd08cab4fd78",
+        "label": "engineering principles",
+        "priority": 4,
+        "gap": 0.5,
+        "prerequisite_satisfied": true,
+        "relevance": 0.8,
+        "demand": 0.5294,
+        "estimated_cost": null,
+        "reason": "Foundational prerequisite required to unlock 'web programming' with proficiency gap of 0.50.",
+        "reason_codes": [
+          "STEPPING_STONE",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED",
+          "TRANSVERSAL_FOUNDATION",
+          "HIGH_RELEVANCE",
+          "HIGH_DEMAND"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/4b51e76e-9e8a-455f-a289-5b48246345c4",
+        "label": "hardware components",
+        "priority": 5,
+        "gap": 0.5,
+        "prerequisite_satisfied": true,
+        "relevance": 0.32,
+        "demand": 0.05,
+        "estimated_cost": null,
+        "reason": "Foundational prerequisite required to unlock 'implement anti-virus software' with proficiency gap of 0.50.",
+        "reason_codes": [
+          "STEPPING_STONE",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED",
+          "TRANSVERSAL_FOUNDATION"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/f9a6f35b-01a7-40c9-8b61-b6ee46f97272",
+        "label": "operating systems",
+        "priority": 6,
+        "gap": 0.5,
+        "prerequisite_satisfied": true,
+        "relevance": 0.32,
+        "demand": 0.0235,
+        "estimated_cost": null,
+        "reason": "Foundational prerequisite required to unlock 'implement anti-virus software' with proficiency gap of 0.50.",
+        "reason_codes": [
+          "STEPPING_STONE",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/0e0c9c11-b39e-43cf-ba95-2fe646f5de64",
+        "label": "identify customer requirements",
+        "priority": 7,
+        "gap": 0.5,
+        "prerequisite_satisfied": true,
+        "relevance": 0.8,
+        "demand": 0.0412,
+        "estimated_cost": null,
+        "reason": "Foundational prerequisite required to unlock 'develop software prototype' with proficiency gap of 0.50.",
+        "reason_codes": [
+          "STEPPING_STONE",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED",
+          "TRANSVERSAL_FOUNDATION",
+          "HIGH_RELEVANCE"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/0af062de-eb43-41e9-9b96-249e2cd22d26",
+        "label": "use markup languages",
+        "priority": 8,
+        "gap": 0.75,
+        "prerequisite_satisfied": true,
+        "relevance": 1.0,
+        "demand": 0.0676,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as essential competency with proficiency gap of 0.75.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED",
+          "HIGH_RELEVANCE"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/85c11255-469f-41bd-a6d1-382bc4a87783",
+        "label": "interpret technical texts",
+        "priority": 9,
+        "gap": 0.75,
+        "prerequisite_satisfied": true,
+        "relevance": 1.0,
+        "demand": 0.0588,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as essential competency with proficiency gap of 0.75.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED",
+          "HIGH_RELEVANCE"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/d9e5349e-8791-49c2-8ba4-839fdd1606c2",
+        "label": "define technical requirements",
+        "priority": 10,
+        "gap": 0.5,
+        "prerequisite_satisfied": true,
+        "relevance": 0.8,
+        "demand": 0.1588,
+        "estimated_cost": null,
+        "reason": "Foundational prerequisite required to unlock 'develop software prototype' with proficiency gap of 0.50.",
+        "reason_codes": [
+          "STEPPING_STONE",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED",
+          "TRANSVERSAL_FOUNDATION",
+          "HIGH_RELEVANCE"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/be48353d-25c7-4f86-bea9-7b9e248fbc6e",
+        "label": "interpret technical requirements",
+        "priority": 11,
+        "gap": 0.5,
+        "prerequisite_satisfied": true,
+        "relevance": 0.8,
+        "demand": 0.0618,
+        "estimated_cost": null,
+        "reason": "Foundational prerequisite required to unlock 'develop software prototype' with proficiency gap of 0.50.",
+        "reason_codes": [
+          "STEPPING_STONE",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED",
+          "HIGH_RELEVANCE"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/c2999f0c-eb37-4cdf-b9b0-82107b628794",
+        "label": "style sheet languages",
+        "priority": 12,
+        "gap": 0.75,
+        "prerequisite_satisfied": true,
+        "relevance": 1.0,
+        "demand": 0.0265,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as essential competency with proficiency gap of 0.75.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED",
+          "TRANSVERSAL_FOUNDATION",
+          "HIGH_RELEVANCE"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/5fd5c985-eaaa-47aa-8314-62359c54505a",
+        "label": "develop digital content",
+        "priority": 13,
+        "gap": 0.75,
+        "prerequisite_satisfied": true,
+        "relevance": 1.0,
+        "demand": 0.0882,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as essential competency with proficiency gap of 0.75.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED",
+          "TRANSVERSAL_FOUNDATION",
+          "HIGH_RELEVANCE"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/901105f8-3a08-453e-b1dc-23619e317fd3",
+        "label": "create flowchart diagram",
+        "priority": 14,
+        "gap": 0.75,
+        "prerequisite_satisfied": true,
+        "relevance": 1.0,
+        "demand": 0.0441,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as essential competency with proficiency gap of 0.75.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED",
+          "TRANSVERSAL_FOUNDATION",
+          "HIGH_RELEVANCE"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/f28617ad-afdd-4041-814c-216153a38998",
+        "label": "analyse software specifications",
+        "priority": 15,
+        "gap": 0.75,
+        "prerequisite_satisfied": true,
+        "relevance": 1.0,
+        "demand": 0.0588,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as essential competency with proficiency gap of 0.75.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED",
+          "HIGH_RELEVANCE"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/2d6d4784-0992-48e7-b100-22d7229b3f0a",
+        "label": "translate requirements into visual design",
+        "priority": 16,
+        "gap": 0.75,
+        "prerequisite_satisfied": true,
+        "relevance": 1.0,
+        "demand": 0.0353,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as essential competency with proficiency gap of 0.75.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED",
+          "TRANSVERSAL_FOUNDATION",
+          "HIGH_RELEVANCE"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/071233c4-ad2b-4f50-b79f-768d2231163e",
+        "label": "domain name service",
+        "priority": 17,
+        "gap": 0.75,
+        "prerequisite_satisfied": true,
+        "relevance": 1.0,
+        "demand": 0.0176,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as essential competency with proficiency gap of 0.75.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED",
+          "HIGH_RELEVANCE"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/8696aff0-18c0-4ba6-a4d0-9a21861b3e5e",
+        "label": "World Wide Web Consortium standards",
+        "priority": 18,
+        "gap": 0.75,
+        "prerequisite_satisfied": true,
+        "relevance": 1.0,
+        "demand": 0.0529,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as essential competency with proficiency gap of 0.75.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED",
+          "TRANSVERSAL_FOUNDATION",
+          "HIGH_RELEVANCE"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/71746a0b-e58d-4dc4-ad03-bd84082eae21",
+        "label": "collect customer feedback on applications",
+        "priority": 19,
+        "gap": 0.75,
+        "prerequisite_satisfied": true,
+        "relevance": 1.0,
+        "demand": 0.05,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as essential competency with proficiency gap of 0.75.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED",
+          "TRANSVERSAL_FOUNDATION",
+          "HIGH_RELEVANCE"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/e74f4f21-8d45-412c-b5c3-652e6167ee32",
+        "label": "content development processes",
+        "priority": 20,
+        "gap": 0.75,
+        "prerequisite_satisfied": true,
+        "relevance": 1.0,
+        "demand": 0.0265,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as essential competency with proficiency gap of 0.75.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED",
+          "TRANSVERSAL_FOUNDATION",
+          "HIGH_RELEVANCE"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+        "label": "computer programming",
+        "priority": 21,
+        "gap": 0.15,
+        "prerequisite_satisfied": true,
+        "relevance": 1.0,
+        "demand": 0.1647,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as essential competency with proficiency gap of 0.15.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED",
+          "TRANSVERSAL_FOUNDATION",
+          "HIGH_RELEVANCE"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/69bbd53f-fbb0-4476-b4b2-ef7844464e28",
+        "label": "web programming",
+        "priority": 22,
+        "gap": 0.75,
+        "prerequisite_satisfied": true,
+        "relevance": 1.0,
+        "demand": 0.0588,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as essential competency with proficiency gap of 0.75.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED",
+          "HIGH_RELEVANCE"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/8b94aa1e-89c9-459d-b3b4-1dfab8dec2df",
+        "label": "use software libraries",
+        "priority": 23,
+        "gap": 0.75,
+        "prerequisite_satisfied": true,
+        "relevance": 1.0,
+        "demand": 0.0471,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as essential competency with proficiency gap of 0.75.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED",
+          "HIGH_RELEVANCE"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9",
+        "label": "use an application-specific interface",
+        "priority": 24,
+        "gap": 0.75,
+        "prerequisite_satisfied": true,
+        "relevance": 1.0,
+        "demand": 0.0941,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as essential competency with proficiency gap of 0.75.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED",
+          "HIGH_RELEVANCE"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/f84a433f-34f1-4083-b0a3-24802623509c",
+        "label": "web services",
+        "priority": 25,
+        "gap": 0.75,
+        "prerequisite_satisfied": true,
+        "relevance": 1.0,
+        "demand": 0.0118,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as essential competency with proficiency gap of 0.75.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED",
+          "HIGH_RELEVANCE"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/925463a7-d51f-4d5b-9f79-4d28cf30acde",
+        "label": "integrated development environment software",
+        "priority": 26,
+        "gap": 0.75,
+        "prerequisite_satisfied": true,
+        "relevance": 1.0,
+        "demand": 0.0471,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as essential competency with proficiency gap of 0.75.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED",
+          "HIGH_RELEVANCE"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/6014921e-1d25-4039-adc2-04852d61880e",
+        "label": "ICT debugging tools",
+        "priority": 27,
+        "gap": 0.75,
+        "prerequisite_satisfied": true,
+        "relevance": 1.0,
+        "demand": 0.0824,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as essential competency with proficiency gap of 0.75.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED",
+          "HIGH_RELEVANCE"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/9d2e926f-53d9-41f5-98f3-19dfaa687f3f",
+        "label": "tools for software configuration management",
+        "priority": 28,
+        "gap": 0.75,
+        "prerequisite_satisfied": true,
+        "relevance": 1.0,
+        "demand": 0.0471,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as essential competency with proficiency gap of 0.75.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED",
+          "HIGH_RELEVANCE"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/2b7a79e5-84d8-4880-be66-3d9bb05bea17",
+        "label": "use software design patterns",
+        "priority": 29,
+        "gap": 0.75,
+        "prerequisite_satisfied": true,
+        "relevance": 1.0,
+        "demand": 0.0441,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as essential competency with proficiency gap of 0.75.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED",
+          "HIGH_RELEVANCE"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/2522a6ce-3202-4ac8-9f5b-b9cb5a3a83a1",
+        "label": "debug software",
+        "priority": 30,
+        "gap": 0.75,
+        "prerequisite_satisfied": true,
+        "relevance": 1.0,
+        "demand": 0.0794,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as essential competency with proficiency gap of 0.75.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED",
+          "HIGH_RELEVANCE"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/797a4416-0b8d-44f3-8fcd-eb10bd0be6b4",
+        "label": "develop software prototype",
+        "priority": 31,
+        "gap": 0.75,
+        "prerequisite_satisfied": true,
+        "relevance": 1.0,
+        "demand": 0.0618,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as essential competency with proficiency gap of 0.75.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED",
+          "HIGH_RELEVANCE"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/16a00c69-9c74-4c37-96d7-6301d285e5ce",
+        "label": "use e-services",
+        "priority": 32,
+        "gap": 0.75,
+        "prerequisite_satisfied": true,
+        "relevance": 1.0,
+        "demand": 0.0353,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as essential competency with proficiency gap of 0.75.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED",
+          "TRANSVERSAL_FOUNDATION",
+          "HIGH_RELEVANCE"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/93e65de1-923c-437e-aa5b-e6002967ce71",
+        "label": "web based collaborative platforms",
+        "priority": 33,
+        "gap": 0.75,
+        "prerequisite_satisfied": true,
+        "relevance": 1.0,
+        "demand": 0.0235,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as essential competency with proficiency gap of 0.75.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED",
+          "HIGH_RELEVANCE"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/d2adb565-a865-424d-aeb5-9fbcbf2afe2a",
+        "label": "Joomla",
+        "priority": 34,
+        "gap": 0.75,
+        "prerequisite_satisfied": true,
+        "relevance": 1.0,
+        "demand": 0.0147,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as essential competency with proficiency gap of 0.75.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED",
+          "HIGH_RELEVANCE"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/c4b1f326-224a-420a-b8b3-814a8f13b6cb",
+        "label": "implement front-end website design",
+        "priority": 35,
+        "gap": 0.75,
+        "prerequisite_satisfied": true,
+        "relevance": 1.0,
+        "demand": 0.0118,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as essential competency with proficiency gap of 0.75.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED",
+          "HIGH_RELEVANCE"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/3cd569a2-4f88-4c1e-9995-8dce8c5e51a7",
+        "label": "JavaScript",
+        "priority": 36,
+        "gap": 0.5,
+        "prerequisite_satisfied": true,
+        "relevance": 0.4,
+        "demand": 0.1588,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as optional competency with proficiency gap of 0.50.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/04f1b938-d4d4-4cb1-a863-982af76b9d93",
+        "label": "SAS language",
+        "priority": 37,
+        "gap": 0.5,
+        "prerequisite_satisfied": true,
+        "relevance": 0.4,
+        "demand": 0.15,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as optional competency with proficiency gap of 0.50.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/4350c38d-0fe9-4ca7-bab9-40ed7f72b04f",
+        "label": "PHP",
+        "priority": 38,
+        "gap": 0.5,
+        "prerequisite_satisfied": true,
+        "relevance": 0.4,
+        "demand": 0.1471,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as optional competency with proficiency gap of 0.50.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/b4dc6e4f-dc7d-445f-8ce2-d7b9d225e282",
+        "label": "AJAX",
+        "priority": 39,
+        "gap": 0.5,
+        "prerequisite_satisfied": true,
+        "relevance": 0.4,
+        "demand": 0.1441,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as optional competency with proficiency gap of 0.50.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/ccd0a1d9-afda-43d9-b901-96344886e14d",
+        "label": "Python (computer programming)",
+        "priority": 40,
+        "gap": 0.5,
+        "prerequisite_satisfied": true,
+        "relevance": 0.4,
+        "demand": 0.1441,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as optional competency with proficiency gap of 0.50.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/19a8293b-8e95-4de3-983f-77484079c389",
+        "label": "Java (computer programming)",
+        "priority": 41,
+        "gap": 0.5,
+        "prerequisite_satisfied": true,
+        "relevance": 0.4,
+        "demand": 0.1382,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as optional competency with proficiency gap of 0.50.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/b633eb55-8f1f-4ae6-ab4c-2022ffe2cb7f",
+        "label": "C++",
+        "priority": 42,
+        "gap": 0.5,
+        "prerequisite_satisfied": true,
+        "relevance": 0.4,
+        "demand": 0.1382,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as optional competency with proficiency gap of 0.50.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/47b9bbcf-356c-4782-83a4-7f5a1b2b51a3",
+        "label": "Assembly (computer programming)",
+        "priority": 43,
+        "gap": 0.5,
+        "prerequisite_satisfied": true,
+        "relevance": 0.4,
+        "demand": 0.1353,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as optional competency with proficiency gap of 0.50.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/51586df8-1c46-4b47-8583-773cb63bf00b",
+        "label": "R",
+        "priority": 44,
+        "gap": 0.5,
+        "prerequisite_satisfied": true,
+        "relevance": 0.4,
+        "demand": 0.1353,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as optional competency with proficiency gap of 0.50.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/0ccdfe98-f845-4598-84a1-3dca66e9d9a3",
+        "label": "Ruby (computer programming)",
+        "priority": 45,
+        "gap": 0.5,
+        "prerequisite_satisfied": true,
+        "relevance": 0.4,
+        "demand": 0.1324,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as optional competency with proficiency gap of 0.50.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/13bdd41a-2a18-441f-96db-41252c519413",
+        "label": "Visual Basic",
+        "priority": 46,
+        "gap": 0.5,
+        "prerequisite_satisfied": true,
+        "relevance": 0.4,
+        "demand": 0.1324,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as optional competency with proficiency gap of 0.50.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/4c016b68-4116-468c-9dc6-42710c239e4a",
+        "label": "C#",
+        "priority": 47,
+        "gap": 0.5,
+        "prerequisite_satisfied": true,
+        "relevance": 0.4,
+        "demand": 0.1324,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as optional competency with proficiency gap of 0.50.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/56a7f561-1d55-43c9-9cd7-36a0a9bc6c50",
+        "label": "ASP.NET",
+        "priority": 48,
+        "gap": 0.5,
+        "prerequisite_satisfied": true,
+        "relevance": 0.4,
+        "demand": 0.1324,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as optional competency with proficiency gap of 0.50.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/867137fb-ff1b-4ca3-99f3-cb6969aa2c68",
+        "label": "TypeScript",
+        "priority": 49,
+        "gap": 0.5,
+        "prerequisite_satisfied": true,
+        "relevance": 0.4,
+        "demand": 0.1324,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as optional competency with proficiency gap of 0.50.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED"
+        ]
+      },
+      {
+        "skill_id": "http://data.europa.eu/esco/skill/9973a5a2-7822-4161-99e9-95c781eb63f8",
+        "label": "Objective-C",
+        "priority": 50,
+        "gap": 0.5,
+        "prerequisite_satisfied": true,
+        "relevance": 0.4,
+        "demand": 0.1324,
+        "estimated_cost": null,
+        "reason": "Directly required by target occupation as optional competency with proficiency gap of 0.50.",
+        "reason_codes": [
+          "REQUIRED_BY_TARGET",
+          "MASTERY_GAP",
+          "PREREQ_SATISFIED"
+        ]
+      }
+    ],
+    "meta": {
+      "target_occupation_id": "http://data.europa.eu/esco/occupation/c40a2919-48a9-40ea-b506-1f34f693496d",
+      "unresolved_skills": [],
+      "generated_at": "2026-10-14T13:52:39.981585Z"
+    }
+  }
+}
