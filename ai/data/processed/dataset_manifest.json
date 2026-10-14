@@ -1,0 +1,32 @@
+{
+  "esco_version": "v1.2.1",
+  "filter_rule_version": "1.0.0",
+  "generated_at": "2026-10-14T07:28:15.616710+00:00",
+  "pipeline_duration_seconds": 55.8,
+  "counts": {
+    "raw_occupation_rows": 3043,
+    "unique_occupations": 3039,
+    "duplicate_occupation_rows": 4,
+    "raw_skill_rows": 13960,
+    "unique_skills": 13939,
+    "duplicate_skill_rows": 21,
+    "tier1_computing_occupations": 96,
+    "tier2_candidate_occupations": 38,
+    "interdisciplinary_occupations": 2,
+    "excluded_occupations": 2903,
+    "computing_occupation_skill_edges": 5976,
+    "retained_skill_hierarchy_edges": 2017,
+    "retained_skill_associations": 493,
+    "total_alt_labels": 117107,
+    "unique_skill_alt_labels": 85916
+  },
+  "checksums": {
+    "occupations.json": "af38fc44aa72cea2e64ce529a9d2060dfbe72ae12dd9ae96e4152c0d9f1b8759",
+    "skills.json": "d91ec75d8f6d34e5821c7d2e6614e6f42847d368047c40c3bebdcad93e27cc4d",
+    "occupation_skill_edges.json": "fecdc04c68de78983a81b4971f13e824a49fb8f138a6597a20771dcbe8dbdf12",
+    "skill_hierarchy.json": "11901c85b58a7e3c0bda9c2cc448c99837dc8474a9ea0484c888c2fd87cd5d4f",
+    "skill_associations.json": "1472b1b2dda23f186f516244864a195453b9ddc693d72cbe807d7cfe22cc8e1e",
+    "computing_occupation_filter_audit.json": "025de8cabb7f1ee2b6513ceff5f22d3908582deb832990680fbec2e822c32de1",
+    "filter_validation_sample.csv": "1fc2f42b313d0b1da6be9031d5848eac49105730bc68af2c1bed986309239565"
+  }
+}

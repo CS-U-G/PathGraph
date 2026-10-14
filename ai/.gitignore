@@ -1,0 +1,23 @@
+# Python environment & cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.venv/
+.pytest_cache/
+dist/
+build/
+
+# Bulky processed & interim JSON data
+data/processed/*.json
+!data/processed/dataset_manifest.json
+!data/processed/graph_validation_report.json
+data/interim/*.json
+
+# Keep interim CSV validation samples and markdown reports tracked
+!data/interim/*.csv
+!data/processed/*.md
+
+# Large model artifacts & binary weights
+artifacts/embeddings/*.npy
+artifacts/onnx/*.onnx
