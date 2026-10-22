@@ -37,6 +37,8 @@ class Settings(BaseSettings):
     processed_data_dir: Path = AI_DIR / "data" / "processed"
     artifacts_dir: Path = AI_DIR / "artifacts"
     seeds_dir: Path = REPO_ROOT / "knowledge" / "seeds"
+    skills_embeddings_path: Path = AI_DIR / "data" / "processed" / "skills_embeddings.npz"
+    occupations_embeddings_path: Path = AI_DIR / "data" / "processed" / "occupations_embeddings.npz"
 
     # Taxonomy & Rule Versions
     esco_version: str = "v1.2.1"

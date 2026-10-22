@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import math
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
@@ -53,6 +54,12 @@ class CompetencyGraph:
         # Prerequisite unknown tracking & precomputed depths
         self.unknown_prerequisite_skills: set[str] = set()
         self.prerequisite_depths: dict[str, int] = {}
+
+        # Centrality: transitive downstream skill counts and log-impact scores
+        # Impact(u) = 1.0 + ln(1 + |TransitiveDescendants(u) ∩ skills|)
+        self.transitive_descendant_counts: dict[str, int] = {}
+        self.unblocking_impact: dict[str, float] = {}
+
         self._is_frozen: bool = False
 
     @classmethod
@@ -228,6 +235,22 @@ class CompetencyGraph:
                 else:
                     graph.prerequisite_depths[n] = 1 + max(graph.prerequisite_depths[p] for p in preds)
 
+        # 9. Precompute transitive descendant counts & unblocking impact scores
+        #    Scoped only to skill nodes so occupation nodes don't pollute the metric.
+        #    Impact(u) = 1.0 + ln(1 + |TransitiveDescendants(u)|)
+        #    O(N²) in the worst case over the prerequisite graph, but N ≈ 125 curated
+        #    prerequisite edges, making this negligible compared to graph load time.
+        for s_uri in graph.skills:
+            if s_uri in graph.prerequisite_graph:
+                desc = nx.descendants(graph.prerequisite_graph, s_uri)
+                # Restrict to skill nodes only
+                desc_skills = desc & graph.skills.keys()
+                count = len(desc_skills)
+            else:
+                count = 0
+            graph.transitive_descendant_counts[s_uri] = count
+            graph.unblocking_impact[s_uri] = round(1.0 + math.log(1.0 + count), 4)
+
         graph._is_frozen = True
         return graph
 
@@ -274,6 +297,23 @@ class CompetencyGraph:
     def get_prerequisite_depth(self, skill_uri: str) -> int:
         """Returns the prerequisite depth of a skill (0 for roots or unknown)."""
         return self.prerequisite_depths.get(skill_uri, 0)
+
+    def get_transitive_descendant_count(self, skill_uri: str) -> int:
+        """Returns the number of transitive downstream skills in the prerequisite graph."""
+        return self.transitive_descendant_counts.get(skill_uri, 0)
+
+    def get_unblocking_impact(self, skill_uri: str) -> float:
+        """Returns the logarithmic unblocking centrality: 1.0 + ln(1 + |descendants|).
+
+        Foundational bottleneck skills with many transitive descendants receive
+        higher impact scores, prioritising them in gap analysis and path generation.
+        Minimum value is 1.0 (skill with no descendants).
+        """
+        return self.unblocking_impact.get(skill_uri, 1.0)
+
+    def get_prerequisite_impact(self, skill_uri: str) -> float:
+        """Alias for get_unblocking_impact conforming to ACE graph metrics interface."""
+        return self.get_unblocking_impact(skill_uri)
 
     def get_taxonomy_cluster(self, skill_uri: str) -> list[str]:
         """Returns taxonomy ancestors up to level 0 (SkillGroups) for clustering."""

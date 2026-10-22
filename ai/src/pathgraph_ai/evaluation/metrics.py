@@ -167,3 +167,89 @@ def evaluate_path(
         kendall_tau=kt,
         edit_distance=ed,
     )
+
+
+def precision_at_k(recommended: list[str], ground_truth: set[str], k: int) -> float:
+    """Calculates Precision at K."""
+    if k <= 0 or not recommended:
+        return 0.0
+    top_k = recommended[:k]
+    hits = sum(1 for item in top_k if item in ground_truth)
+    return hits / k
+
+
+def recall_at_k(recommended: list[str], ground_truth: set[str], k: int) -> float:
+    """Calculates Recall at K."""
+    if not ground_truth or k <= 0:
+        return 0.0
+    top_k = recommended[:k]
+    hits = sum(1 for item in top_k if item in ground_truth)
+    return hits / len(ground_truth)
+
+
+def mean_reciprocal_rank(
+    recommendation_lists: list[list[str]], ground_truth_sets: list[set[str]]
+) -> float:
+    """Calculates Mean Reciprocal Rank (MRR) across multiple queries."""
+    if not recommendation_lists or not ground_truth_sets:
+        return 0.0
+    reciprocal_ranks = []
+    for recs, ground_truth in zip(recommendation_lists, ground_truth_sets):
+        rr = 0.0
+        for rank, item in enumerate(recs, start=1):
+            if item in ground_truth:
+                rr = 1.0 / rank
+                break
+        reciprocal_ranks.append(rr)
+    return sum(reciprocal_ranks) / len(reciprocal_ranks)
+
+
+def evaluate_prerequisite_violations(
+    sequenced_skills: list[str],
+    prerequisite_pairs: list[tuple[str, str]],
+) -> dict[str, float]:
+    """Evaluates whether prerequisite ordering is respected.
+
+    Args:
+        sequenced_skills: Ordered list of skill URIs in the generated learning path.
+        prerequisite_pairs: List of (prerequisite_uri, dependent_skill_uri).
+
+    Returns:
+        Dict containing total relevant prerequisites, violations count, and violation rate.
+    """
+    position_map = {uri: idx for idx, uri in enumerate(sequenced_skills)}
+    total_relevant = 0
+    violations = 0
+
+    for prereq, dependent in prerequisite_pairs:
+        if prereq in position_map and dependent in position_map:
+            total_relevant += 1
+            if position_map[prereq] > position_map[dependent]:
+                violations += 1
+
+    rate = (violations / total_relevant) if total_relevant > 0 else 0.0
+    return {
+        "total_prerequisites_checked": float(total_relevant),
+        "violations_count": float(violations),
+        "violation_rate": rate,
+        "is_valid_dag": (violations == 0),
+    }
+
+
+def evaluate_path_completeness(
+    missing_skill_uris: set[str],
+    path_skill_uris: list[str],
+) -> dict[str, Any]:
+    """Verifies that all missing skills are present in the path and not duplicated."""
+    path_set = set(path_skill_uris)
+    omitted = missing_skill_uris - path_set
+    duplicates = len(path_skill_uris) - len(path_set)
+
+    return {
+        "total_expected": len(missing_skill_uris),
+        "total_in_path": len(path_skill_uris),
+        "omitted_count": len(omitted),
+        "duplicate_count": duplicates,
+        "is_complete": len(omitted) == 0 and duplicates == 0,
+    }
+

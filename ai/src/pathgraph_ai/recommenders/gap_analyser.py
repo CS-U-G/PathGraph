@@ -32,7 +32,8 @@ class SkillGap:
     learner_proficiency: float | None  # p
     evidence_confidence: float  # q
     gap: float  # max(0, t - p)
-    priority_weight: float  # G = r * gap * q normalised
+    priority_weight: float  # G = r * gap * q * impact, normalised to [0, 1]
+    unblocking_impact: float  # 1.0 + ln(1 + |transitive_descendants|)
     status: str  # 'satisfied' | 'partially_satisfied' | 'missing_or_below_target' | 'unassessed'
     is_unmet: bool  # True if requires learning or assessment
 
@@ -48,6 +49,7 @@ class GapAnalyser:
         essential_weight: float = settings.essential_requirement_weight,
         optional_weight: float = settings.optional_requirement_weight,
         include_unassessed: bool = True,
+        use_unblocking_impact: bool = True,
     ) -> None:
         self.graph = graph
         self.essential_target = essential_target
@@ -55,6 +57,7 @@ class GapAnalyser:
         self.essential_weight = essential_weight
         self.optional_weight = optional_weight
         self.include_unassessed = include_unassessed
+        self.use_unblocking_impact = use_unblocking_impact
 
     def get_evidence_confidence(self, source: str) -> float:
         """Maps an evidence source to its configured confidence score."""
@@ -78,8 +81,18 @@ class GapAnalyser:
         requirements = self.graph.get_occupation_requirements(occupation_uri)
         gaps: list[SkillGap] = []
 
+        # The maximum possible impact factor across all skills in this occupation
+        # is bounded by the skill with the most descendants; use it to normalise.
+        # Impact_cap is computed once per call to avoid repeated graph traversals.
+        if self.use_unblocking_impact:
+            req_uris = [req.skill_uri for req in requirements]
+            impact_values = [self.graph.get_unblocking_impact(u) for u in req_uris] or [1.0]
+            impact_cap = max(impact_values)
+        else:
+            impact_cap = 1.0
+
         # Find max possible priority weight for normalisation
-        max_possible_g = self.essential_weight * 1.0 * 1.0
+        max_possible_g = self.essential_weight * 1.0 * 1.0 * impact_cap
 
         for req in requirements:
             s_uri = req.skill_uri
@@ -112,9 +125,12 @@ class GapAnalyser:
                     status = "missing_or_below_target"
                     is_unmet = True
 
-            # G = r * gap * q normalised to [0, 1]
-            g_raw = r * raw_gap * q
-            g_norm = min(max(round(g_raw / max_possible_g, 4), 0.0), 1.0)
+            # Unblocking impact centrality: 1.0 + ln(1 + |transitive_descendants|)
+            impact = self.graph.get_unblocking_impact(s_uri) if self.use_unblocking_impact else 1.0
+
+            # G = r * gap * q * impact, normalised to [0, 1]
+            g_raw = r * raw_gap * q * impact
+            g_norm = min(max(round(g_raw / max_possible_g, 4), 0.0), 1.0) if max_possible_g > 0 else 0.0
 
             gaps.append(
                 SkillGap(
@@ -128,6 +144,7 @@ class GapAnalyser:
                     evidence_confidence=round(q, 4),
                     gap=round(raw_gap, 4),
                     priority_weight=g_norm,
+                    unblocking_impact=round(impact, 4),
                     status=status,
                     is_unmet=is_unmet,
                 )
