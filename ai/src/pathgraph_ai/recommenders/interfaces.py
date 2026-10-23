@@ -7,6 +7,9 @@ from dataclasses import dataclass, field
 from typing import Any
 
 
+from pathgraph_ai.learner.bkt import BKTModel, BKTParameters
+
+
 class ProficiencyUpdater(ABC):
     """Interface for updating learner skill proficiency based on interaction outcomes."""
 
@@ -23,7 +26,7 @@ class ProficiencyUpdater(ABC):
 
 @dataclass
 class BKTProficiencyUpdater(ProficiencyUpdater):
-    """Bayesian Knowledge Tracing (BKT) updater for future database integration.
+    """Bayesian Knowledge Tracing (BKT) updater backed by BKTModel.
 
     Standard BKT parameters:
     - P(L0): Prior probability of mastery (default: current proficiency)
@@ -35,6 +38,16 @@ class BKTProficiencyUpdater(ProficiencyUpdater):
     p_transit: float = 0.15
     p_guess: float = 0.20
     p_slip: float = 0.10
+    bkt_model: BKTModel | None = None
+
+    def __post_init__(self) -> None:
+        if self.bkt_model is None:
+            params = BKTParameters(
+                p_t=self.p_transit,
+                p_g=self.p_guess,
+                p_s=self.p_slip,
+            )
+            self.bkt_model = BKTModel(params=params)
 
     def update(
         self,
@@ -44,20 +57,13 @@ class BKTProficiencyUpdater(ProficiencyUpdater):
     ) -> dict[str, float]:
         updated = dict(current_proficiencies)
         p_l = updated.get(skill_uri, 0.10)
-
-        # Posterior probability P(L | observation)
-        if outcome:
-            numerator = p_l * (1.0 - self.p_slip)
-            denominator = numerator + (1.0 - p_l) * self.p_guess
-        else:
-            numerator = p_l * self.p_slip
-            denominator = numerator + (1.0 - p_l) * (1.0 - self.p_guess)
-
-        p_l_given_obs = numerator / max(denominator, 1e-6)
-
-        # Transition to next state: P(L_next) = P(L | obs) + (1 - P(L | obs)) * P(T)
-        p_l_next = p_l_given_obs + (1.0 - p_l_given_obs) * self.p_transit
-        updated[skill_uri] = round(min(max(p_l_next, 0.0), 1.0), 4)
+        assert self.bkt_model is not None
+        new_mastery, _ = self.bkt_model.update(
+            current_mastery=p_l,
+            evidence=outcome,
+            evidence_count=0,
+        )
+        updated[skill_uri] = round(min(max(new_mastery, 0.0), 1.0), 4)
         return updated
 
 

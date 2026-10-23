@@ -291,3 +291,94 @@ class ErrorResponse(BaseModel):
         description="ISO-8601 UTC timestamp when the error occurred.",
         json_schema_extra={"example": "2026-09-27T08:00:00Z"},
     )
+
+
+# --- Extended AI Service Schemas (Graph and Recommendation V1 API) ---
+
+
+class HealthResponse(BaseModel):
+    """Service health and diagnostic status."""
+
+    status: str = Field(..., json_schema_extra={"example": "healthy"})
+    app_name: str = Field(..., json_schema_extra={"example": "PathGraph AI Service"})
+    version: str = Field(..., json_schema_extra={"example": "1.0.0"})
+    esco_data_available: bool = Field(default=False)
+
+
+class SkillItem(BaseModel):
+    """Skill representation for skill extraction or catalog listings."""
+
+    uri: Optional[str] = Field(default=None, description="ESCO concept URI")
+    label: str = Field(..., description="Skill preferred label or title")
+    skill_type: Optional[str] = Field(default=None, description="knowledge or skill/competence")
+    relation_type: Optional[str] = Field(default=None, description="essential or optional")
+
+
+class SkillExtractionRequest(BaseModel):
+    """Request payload for extracting skills from free-form text."""
+
+    text: str = Field(..., min_length=1, description="Raw CV or job description text")
+
+
+class SkillExtractionResponse(BaseModel):
+    """Response payload containing extracted skills."""
+
+    extracted_skills: list[SkillItem] = Field(default_factory=list)
+    total_extracted: int = 0
+
+
+class SkillGapRequest(BaseModel):
+    """Request payload for direct skill gap analysis."""
+
+    target_occupation_uri: str = Field(..., description="ESCO URI of target occupation")
+    user_skill_uris: list[str] = Field(default_factory=list, description="List of ESCO skill URIs user possesses")
+
+
+class SkillMatchDetail(BaseModel):
+    """Detailed record of a matched or missing skill."""
+
+    skill_uri: str
+    skill_label: str
+    relation_type: str
+    similarity_score: float = 1.0
+
+
+class SkillGapResponse(BaseModel):
+    """Response payload detailing exact and semantic skill gap breakdown."""
+
+    target_occupation_uri: str
+    target_occupation_label: str
+    essential_match_percentage: float
+    overall_match_percentage: float
+    matched_essential_skills: list[SkillMatchDetail] = Field(default_factory=list)
+    missing_essential_skills: list[SkillMatchDetail] = Field(default_factory=list)
+    matched_optional_skills: list[SkillMatchDetail] = Field(default_factory=list)
+    missing_optional_skills: list[SkillMatchDetail] = Field(default_factory=list)
+
+
+class LearningPathRequest(BaseModel):
+    """Request payload for sequencing missing skills into a learning path."""
+
+    target_occupation_uri: str = Field(..., description="ESCO URI of target occupation")
+    missing_skill_uris: list[str] = Field(..., min_length=1, description="Skill URIs requiring sequencing")
+
+
+class LearningPathStepResponse(BaseModel):
+    """An individual sequenced milestone step in a learning path."""
+
+    step_number: int
+    skill_uri: str
+    skill_label: str
+    relation_type: str
+    prerequisites: list[str] = Field(default_factory=list)
+
+
+class LearningPathResponse(BaseModel):
+    """Response payload containing sequenced learning path."""
+
+    target_occupation_uri: str
+    target_occupation_label: str
+    total_steps: int
+    steps: list[LearningPathStepResponse] = Field(default_factory=list)
+    has_prerequisite_cycles: bool = False
+
